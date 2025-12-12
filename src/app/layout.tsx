@@ -7,20 +7,18 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GrowthWave Agency – SEO, Digital Marketing & Web Development",
-  description: "Skyrocket your business with expert SEO, paid ads, and custom web/app development.",
+  title: "Denisia WebOps – SEO, Marketing & Web Development",
+  description: "Professional digital marketing, SEO and web/app development services",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white dark:bg-gray-900`}>
+      <body className={inter.className}>
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
