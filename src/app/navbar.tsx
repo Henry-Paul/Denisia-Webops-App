@@ -2,28 +2,18 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-blue-600">
-          GrowthWave
-        </Link>
-        <nav className="hidden md:flex space-x-10">
-          {["Home", "Services", "Portfolio", "Blog", "SEO Audit", "Contact"].map((item) => {
-            const href = item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "-")}`;
-            return (
-              <Link
-                key={item}
-                href={href}
-                className="text-gray-700 hover:text-blue-600 transition"
-              >
-                {item}
-              </Link>
-            );
-          })}
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+      <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <Link href="/" className="text-3xl font-bold text-blue-600">Denisia</Link>
+        <nav className="hidden md:flex space-x-8">
+          <Link href="/" className="text-gray-700 hover:text-blue-600">Home</Link>
+          <Link href="/services" className="text-gray-700 hover:text-blue-600">Services</Link>
+          <Link href="/portfolio" className="text-gray-700 hover:text-blue-600">Portfolio</Link>
+          <Link href="/contact" className="text-gray-700 hover:text-blue-600">Contact</Link>
         </nav>
-        <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">
-          Get Free Audit
-        </button>
+        <Link href="/seo-audit" className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700">
+          Free SEO Audit
+        </Link>
       </div>
     </header>
   );
